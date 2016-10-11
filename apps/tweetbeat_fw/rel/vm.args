@@ -1,3 +1,6 @@
+-sname tweetbeat
+-setcookie nerves
+
 ## Start the Elixir shell
 -noshell
 -user Elixir.IEx.CLI
