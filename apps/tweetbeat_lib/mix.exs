@@ -18,7 +18,7 @@ defmodule TweetbeatLib.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :oauth, :extwitter]]
   end
 
   # Dependencies can be Hex packages:
@@ -35,6 +35,7 @@ defmodule TweetbeatLib.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:oauth, github: "tim/erlang-oauth"},
+      {:extwitter, "~> 0.7.2"}]
   end
 end

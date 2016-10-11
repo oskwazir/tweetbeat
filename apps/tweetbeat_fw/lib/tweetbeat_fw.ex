@@ -11,6 +11,7 @@ defmodule TweetbeatFw do
     # Define workers and child supervisors to be supervised
     children = [
       worker(Task, [fn -> network end], restart: :transient),
+      worker(TweetbeatFW.Worker, [])
     ]
 
 

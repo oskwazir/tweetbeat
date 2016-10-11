@@ -25,6 +25,12 @@ config :nerves_ntp, :servers, [
   "3.pool.ntp.org"
 ]
 
+config :extwitter, :oauth, [
+  consumer_key: System.get_env("CONSUMER_KEY"),
+  consumer_secret: System.get_env("CONSUMER_SECRET"),
+  access_token: System.get_env("ACCESS_TOKEN"),
+  access_token_secret: System.get_env("ACCESS_TOKEN_SECRET")
+]
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
