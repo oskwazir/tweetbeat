@@ -3,7 +3,19 @@
 #
 # This configuration file is loaded before any dependency and
 # is restricted to this project.
+#
+# Use the following to pull variables from the command prompt 
+# System.get_env("WIFI_PASSWORD")
+
 use Mix.Config
+config :nerves, :firmware,
+   rootfs_additions: "rootfs-additions"
+
+config :tweetbeat_fw, :wlan0,
+       ssid: System.get_env("WIFI_SSID"),
+       key_mgmt: :"WPA-PSK",
+       psk: System.get_env("WIFI_PASSWORD")
+
 
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

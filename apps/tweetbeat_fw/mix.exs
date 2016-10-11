@@ -1,7 +1,7 @@
 defmodule TweetbeatFw.Mixfile do
   use Mix.Project
 
-  @target System.get_env("NERVES_TARGET") || "linkit"
+  @target System.get_env("NERVES_TARGET") || "rpi3"
 
   def project do
     [app: :tweetbeat_fw,
