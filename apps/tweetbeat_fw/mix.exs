@@ -21,12 +21,16 @@ defmodule TweetbeatFw.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {TweetbeatFw, []},
-     applications: [:logger, :tweetbeat_lib, :nerves_interim_wifi]]
+     applications: [:logger, 
+      :tweetbeat_lib, 
+      :nerves_interim_wifi,
+      :nerves_ntp]]
   end
 
   def deps do
     [{:nerves, "~> 0.3.0"},
      {:nerves_interim_wifi, "~> 0.1.0"},
+     {:nerves_ntp, "~> 0.1.1"},
      {:tweetbeat_lib, in_umbrella: true}]
   end
 
