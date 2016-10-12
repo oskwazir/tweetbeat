@@ -11,9 +11,8 @@ defmodule TweetbeatFw do
     # Define workers and child supervisors to be supervised
     children = [
       worker(Task, [fn -> network end], restart: :transient),
-      worker(TweetbeatFW.Worker, [])
+      worker(TweetbeatLib.Worker, [])
     ]
-
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
     # for other strategies and supported options
