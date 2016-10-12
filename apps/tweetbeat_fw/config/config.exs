@@ -19,6 +19,16 @@ config :nerves_ntp, :servers, [
   "2.pool.ntp.org",
   "3.pool.ntp.org"
 ]
+
+config :ui, Ui.Endpoint,
+  http: [port: 80],
+  url: [host: "localhost", port: 80],
+  root: Path.dirname(__DIR__),
+  server: true,
+  render_errors: [accepts: ~w(html json)],
+  pubsub: [name: Ui.PubSub,
+           adapter: Phoenix.PubSub.PG2]
+
 # Import target specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 # Uncomment to use target specific configurations
