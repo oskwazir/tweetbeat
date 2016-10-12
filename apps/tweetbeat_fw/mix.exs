@@ -24,14 +24,16 @@ defmodule TweetbeatFw.Mixfile do
      applications: [:logger, 
       :tweetbeat_lib, 
       :nerves_interim_wifi,
-      :nerves_ntp]]
+      :nerves_ntp,
+      :ui]]
   end
 
   def deps do
     [{:nerves, "~> 0.3.0"},
      {:nerves_interim_wifi, "~> 0.1.0"},
      {:nerves_ntp, "~> 0.1.1"},
-     {:tweetbeat_lib, in_umbrella: true}]
+     {:tweetbeat_lib, in_umbrella: true},
+     {:ui, in_umbrella: true}]
   end
 
   def system(target) do
