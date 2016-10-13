@@ -23,14 +23,18 @@ defmodule TweetbeatFw.Mixfile do
     [mod: {TweetbeatFw, []},
      applications: [:logger, 
       :tweetbeat_lib, 
-      :nerves_interim_wifi,
+      # :nerves_interim_wifi,
+      :nerves_networking,
+      :nerves_ssdp_server,
       :nerves_ntp,
       :ui]]
   end
 
   def deps do
     [{:nerves, "~> 0.3.0"},
-     {:nerves_interim_wifi, "~> 0.1.0"},
+     # {:nerves_interim_wifi, "~> 0.1.0"},
+     {:nerves_networking, github: "nerves-project/nerves_networking"},
+     {:nerves_ssdp_server, github: "nerves-project/nerves_ssdp_server"},
      {:nerves_ntp, "~> 0.1.1"},
      {:tweetbeat_lib, in_umbrella: true},
      {:ui, in_umbrella: true}]

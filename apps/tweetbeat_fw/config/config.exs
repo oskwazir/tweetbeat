@@ -8,8 +8,8 @@
 # System.get_env("WIFI_PASSWORD")
 
 use Mix.Config
-# config :nerves, :firmware,
-#    rootfs_additions: "rootfs-additions"
+config :nerves, :firmware,
+   rootfs_additions: "rootfs-additions"
 
 config :nerves_ntp, :ntpd, "/usr/sbin/ntpd"
 
